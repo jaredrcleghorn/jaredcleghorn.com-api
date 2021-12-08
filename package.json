@@ -6,6 +6,7 @@
   "scripts": {
     "build": "babel src -x \".ts\" -d lib",
     "clean": "rm -r lib",
+    "develop": "nodemon --exec babel-node --extensions \".ts\" src/index.ts",
     "format": "prettier --write .",
     "format-check": "prettier --check .",
     "start": "node .",
