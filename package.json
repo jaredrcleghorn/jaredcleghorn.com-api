@@ -22,5 +22,8 @@
   "homepage": "https://github.com/jaredrcleghorn/jaredcleghorn.com-api#readme",
   "devDependencies": {
     "prettier": "^2.5.1"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
   }
 }
