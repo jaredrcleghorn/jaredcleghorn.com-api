@@ -21,6 +21,8 @@
   },
   "homepage": "https://github.com/jaredrcleghorn/jaredcleghorn.com-api#readme",
   "devDependencies": {
+    "@babel/cli": "^7.16.0",
+    "@babel/core": "^7.16.0",
     "prettier": "^2.5.1"
   },
   "dependencies": {
