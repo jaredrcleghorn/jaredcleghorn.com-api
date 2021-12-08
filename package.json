@@ -5,6 +5,7 @@
   "main": "lib/index.js",
   "scripts": {
     "build": "babel src -d lib",
+    "clean": "rm -r lib",
     "format": "prettier --write .",
     "format-check": "prettier --check .",
     "start": "node .",
