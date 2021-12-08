@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/jaredrcleghorn/jaredcleghorn.com-api/issues"
   },
-  "homepage": "https://github.com/jaredrcleghorn/jaredcleghorn.com-api#readme"
+  "homepage": "https://github.com/jaredrcleghorn/jaredcleghorn.com-api#readme",
+  "devDependencies": {
+    "prettier": "^2.5.1"
+  }
 }
