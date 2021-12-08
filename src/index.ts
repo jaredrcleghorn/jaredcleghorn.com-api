@@ -4,6 +4,13 @@ import express, { Request, Response } from "express"
 import nodemailer from "nodemailer"
 import * as SMTPTransport from "nodemailer/lib/smtp-transport"
 
+interface ContactBody {
+  name: string
+  email: string
+  subject: string
+  message: string
+}
+
 dotenv.config()
 
 const nodemailerOptions: SMTPTransport.Options = {
@@ -22,7 +29,27 @@ const port: number = 3000
 
 app.use(cors())
 
-app.get("/", (req: Request, res: Response) => res.send("hello, world"))
+app.post("/contact", express.json(), async (req: Request, res: Response) => {
+  const { name, email, subject, message }: ContactBody = req.body
+
+  if ([name, email, subject, message].some(x => x === "")) {
+    res.sendStatus(400)
+    return
+  }
+
+  try {
+    await transporter.sendMail({
+      from: `"${name}" <${email}>`,
+      to: process.env.NODEMAILER_TO,
+      subject,
+      text: `${message}\n\nSent via jaredcleghorn.com`,
+    })
+
+    res.sendStatus(200)
+  } catch {
+    res.sendStatus(500)
+  }
+})
 
 app.listen(port, () =>
   console.log(`jaredcleghorn.com API listening at http://localhost:${port}`)
