@@ -27,6 +27,7 @@
     "prettier": "^2.5.1"
   },
   "dependencies": {
+    "@babel/preset-env": "^7.16.4",
     "express": "^4.17.1"
   }
 }
