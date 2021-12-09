@@ -3,6 +3,7 @@ import dotenv from "dotenv"
 import express, { Request, Response } from "express"
 import nodemailer from "nodemailer"
 import * as SMTPTransport from "nodemailer/lib/smtp-transport"
+import "regenerator-runtime/runtime.js"
 
 interface ContactBody {
   name: string
